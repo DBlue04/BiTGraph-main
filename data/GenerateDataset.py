@@ -62,7 +62,8 @@ def synthetic_data(mask_ratio,dataset):
         data = pd.read_hdf(path)
         data = np.array(data)
         data = data[:, :, None]
-        mask=get_0_1_array(data,mask_ratio)
+        mask= get_0_1_array(data,mask_ratio)
+        print(1)
 
 
     # elif(dataset=='PEMS'):

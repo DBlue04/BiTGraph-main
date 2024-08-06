@@ -209,9 +209,6 @@ def evaluate(model, val_iter,scaler):
 
 
 def run():
-
-
-
     model=Model(True, True, 2, node_number,args.kernel_set,
               'cuda:0', predefined_A=None,
               dropout=0.3, subgraph_size=5,
