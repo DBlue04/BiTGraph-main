@@ -124,30 +124,30 @@ if(args.dataset=='Metr'):
     args.enc_in=207
     args.dec_in=207
     args.c_out=207
-elif(args.dataset=='PEMS'):
-    node_number=325
-    args.num_nodes=325
-    args.enc_in = 325
-    args.dec_in = 325
-    args.c_out = 325
-elif(args.dataset=='ETTh1'):
-    node_number=7
-    args.num_nodes=7
-    args.enc_in = 7
-    args.dec_in = 7
-    args.c_out = 7
-elif(args.dataset=='Elec'):
-    node_number=321
-    args.num_nodes=321
-    args.enc_in = 321
-    args.dec_in = 321
-    args.c_out = 321
-elif(args.dataset=='BeijingAir'):
-    node_number=36
-    args.num_nodes=36
-    args.enc_in = 36
-    args.dec_in = 36
-    args.c_out = 36
+# elif(args.dataset=='PEMS'):
+#     node_number=325
+#     args.num_nodes=325
+#     args.enc_in = 325
+#     args.dec_in = 325
+#     args.c_out = 325
+# elif(args.dataset=='ETTh1'):
+#     node_number=7
+#     args.num_nodes=7
+#     args.enc_in = 7
+#     args.dec_in = 7
+#     args.c_out = 7
+# elif(args.dataset=='Elec'):
+#     node_number=321
+#     args.num_nodes=321
+#     args.enc_in = 321
+#     args.dec_in = 321
+#     args.c_out = 321
+# elif(args.dataset=='BeijingAir'):
+#     node_number=36
+#     args.num_nodes=36
+#     args.enc_in = 36
+#     args.dec_in = 36
+#     args.c_out = 36
 
 def train(model):
     optimizer = optim.Adam(model.parameters(), lr=1e-3)
