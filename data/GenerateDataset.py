@@ -66,43 +66,43 @@ def synthetic_data(mask_ratio,dataset):
         print(1)
 
 
-    # elif(dataset=='PEMS'):
-    #     path = os.path.join('./data/pems_bay/', 'pems_bay.h5')
-    #     data = pd.read_hdf(path)
-    #     data = np.array(data)
-    #     data = data[:, :, None]
-    #     mask = get_0_1_array(data, mask_ratio)
+    elif(dataset=='PEMS'):
+        path = os.path.join('./data/pems_bay/', 'pems_bay.h5')
+        data = pd.read_hdf(path)
+        data = np.array(data)
+        data = data[:, :, None]
+        mask = get_0_1_array(data, mask_ratio)
 
 
-    # elif(dataset=='ETTh1'):
-    #     df_raw = pd.read_csv('./data/ETT/ETTh1.csv')
-    #     data=np.array(df_raw)
-    #     data=data[::,1:]
-    #     mask = get_0_1_array(data, mask_ratio)
-    #     data = data[:, :, None].astype('float32')
-    #     mask = mask[:, :, None].astype('int32')
+    elif(dataset=='ETTh1'):
+        df_raw = pd.read_csv('./data/ETT/ETTh1.csv')
+        data=np.array(df_raw)
+        data=data[::,1:]
+        mask = get_0_1_array(data, mask_ratio)
+        data = data[:, :, None].astype('float32')
+        mask = mask[:, :, None].astype('int32')
 
-    # elif (dataset == 'Elec'):
-    #     data_list = []
-    #     with open('./data/Electricity/electricity.txt', 'r') as f:
-    #         reader = f.readlines()
-    #         for row in reader:
-    #             data_list.append(row.split(','))
+    elif (dataset == 'Elec'):
+        data_list = []
+        with open('./data/Electricity/electricity.txt', 'r') as f:
+            reader = f.readlines()
+            for row in reader:
+                data_list.append(row.split(','))
 
-    #     data = np.array(data_list).astype('float')
-    #     mask = get_0_1_array(data, mask_ratio)
-    #     data = data[:, :, None].astype('float32')
-    #     mask = mask[:, :, None].astype('int32')
+        data = np.array(data_list).astype('float')
+        mask = get_0_1_array(data, mask_ratio)
+        data = data[:, :, None].astype('float32')
+        mask = mask[:, :, None].astype('int32')
 
-    # elif(dataset=='BeijingAir'):
+    elif(dataset=='BeijingAir'):
 
-    #     data = pd.DataFrame(pd.read_hdf('./data/air_quality/small36.h5', 'pm25'))
-    #     data=np.array(data)
-    #     eval_mask=~np.isnan(data)
-    #     mask= get_0_1_array(data, mask_ratio)  #   ~np.isnan(data)
-    #     data[np.isnan(data)]=0.0
-    #     data = data[:, :, None].astype('float32')
-    #     mask = mask[:, :, None].astype('int32')
+        data = pd.DataFrame(pd.read_hdf('./data/air_quality/small36.h5', 'pm25'))
+        data=np.array(data)
+        eval_mask=~np.isnan(data)
+        mask= get_0_1_array(data, mask_ratio)  #   ~np.isnan(data)
+        data[np.isnan(data)]=0.0
+        data = data[:, :, None].astype('float32')
+        mask = mask[:, :, None].astype('int32')
 
 
     return data,mask
