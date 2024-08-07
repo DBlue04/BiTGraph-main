@@ -94,7 +94,7 @@ parser.add_argument('--test-len', type=float, default=0.2)
 parser.add_argument('--mask_ratio',type=float,default=0.1)
 # Training params
 parser.add_argument('--lr', type=float, default=0.001)  #0.001
-parser.add_argument('--epochs', type=int, default=300) # 20:34 7/8
+# parser.add_argument('--epochs', type=int, default=300) # 20:34 7/8
 parser.add_argument('--patience', type=int, default=40)
 parser.add_argument('--l2-reg', type=float, default=0.)
 # parser.add_argument('--batches-epoch', type=int, default=300)
