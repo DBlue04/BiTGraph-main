@@ -23,7 +23,7 @@ parser.add_argument('--epochs', type=int)
 parser.add_argument('--batch_size', type=int, default=64)
 parser.add_argument('--task', default='prediction',type=str)
 parser.add_argument("--adj-threshold", type=float, default=0.1)
-parser.add_argument('--dataset',default='Elec')
+parser.add_argument('--dataset',default='ETTh1')#Elec
 parser.add_argument('--val_ratio',default=0.2)
 parser.add_argument('--test_ratio',default=0.2)
 parser.add_argument('--column_wise',default=False)
@@ -136,12 +136,12 @@ elif(args.dataset=='ETTh1'):
     args.enc_in = 7
     args.dec_in = 7
     args.c_out = 7
-elif(args.dataset=='Elec'):
-    node_number=321
-    args.num_nodes=321
-    args.enc_in = 321
-    args.dec_in = 321
-    args.c_out = 321
+# elif(args.dataset=='Elec'):
+#     node_number=321
+#     args.num_nodes=321
+#     args.enc_in = 321
+#     args.dec_in = 321
+#     args.c_out = 321
 elif(args.dataset=='BeijingAir'):
     node_number=36
     args.num_nodes=36
