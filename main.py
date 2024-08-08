@@ -19,7 +19,7 @@ import datetime
 torch.multiprocessing.set_sharing_strategy('file_system')
 node_number=207
 parser = argparse.ArgumentParser()
-parser.add_argument('--epochs', type=int)
+# parser.add_argument('--epochs', type=int)
 parser.add_argument('--batch_size', type=int, default=64)
 parser.add_argument('--task', default='prediction',type=str)
 parser.add_argument("--adj-threshold", type=float, default=0.1)
