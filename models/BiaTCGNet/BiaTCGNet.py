@@ -71,21 +71,21 @@ class Model(nn.Module):
                 new_dilation *= dilation_exponential #2
 
         self.layers = layers
-        self.end_conv_1 = weight_norm(nn.Conv2d(in_channels=skip_channels,
+        self.end_conv_1 = torch.nn.utils.parametrizations.weight_norm(nn.Conv2d(in_channels=skip_channels,
                                              out_channels=end_channels,
                                              kernel_size=(1,1),
                                              bias=True))
-        self.end_conv_2 = weight_norm(nn.Conv2d(in_channels=end_channels,
+        self.end_conv_2 = torch.nn.utils.parametrizations.weight_norm(nn.Conv2d(in_channels=end_channels,
                                              out_channels=out_len*out_dim,
                                              kernel_size=(1,1),
                                              bias=True))
         if self.seq_length > self.receptive_field:
-            self.skip0 = weight_norm(nn.Conv2d(in_channels=in_dim, out_channels=skip_channels, kernel_size=(1, self.seq_length), bias=True))
-            self.skipE = weight_norm(nn.Conv2d(in_channels=residual_channels, out_channels=skip_channels, kernel_size=(1, self.seq_length-self.receptive_field+1), bias=True))
+            self.skip0 = torch.nn.utils.parametrizations.weight_norm(nn.Conv2d(in_channels=in_dim, out_channels=skip_channels, kernel_size=(1, self.seq_length), bias=True))
+            self.skipE = torch.nn.utils.parametrizations.weight_norm(nn.Conv2d(in_channels=residual_channels, out_channels=skip_channels, kernel_size=(1, self.seq_length-self.receptive_field+1), bias=True))
 
         else:
-            self.skip0 = weight_norm(nn.Conv2d(in_channels=in_dim, out_channels=skip_channels, kernel_size=(1, self.receptive_field), bias=True))
-            self.skipE = weight_norm(nn.Conv2d(in_channels=residual_channels, out_channels=skip_channels, kernel_size=(1, 1), bias=True))
+            self.skip0 = torch.nn.utils.parametrizations.weight_norm(nn.Conv2d(in_channels=in_dim, out_channels=skip_channels, kernel_size=(1, self.receptive_field), bias=True))
+            self.skipE = torch.nn.utils.parametrizations.weight_norm(nn.Conv2d(in_channels=residual_channels, out_channels=skip_channels, kernel_size=(1, 1), bias=True))
 
 
         self.idx = torch.arange(self.num_nodes).cuda()#to(device)

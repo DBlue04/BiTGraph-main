@@ -197,7 +197,7 @@ class dilated_inception(nn.Module):
         self.kernel_set = kernel_set#[2,3,6,7]
         cout = int(cout/len(self.kernel_set))
         for kern in self.kernel_set:
-            self.tconv.append(weight_norm(nn.Conv2d(cin,cout,(1,kern),dilation=(1,dilation_factor))))
+            self.tconv.append(torch.nn.utils.parametrizations.weight_norm(nn.Conv2d(cin,cout,(1,kern),dilation=(1,dilation_factor))))
             self.mconv.append(nn.Conv2d(1,1,(1,kern),dilation=(1,dilation_factor)))
         # self.init_weight()
     def init_weight(self):
