@@ -186,7 +186,7 @@ def train(model):
             os.makedirs('./output_BiaTCGNet_'+args.dataset+'_miss'+str(args.mask_ratio)+'_'+args.task,exist_ok=True)
             # torch.save(best_model, './output_BiaTCGNet_'+args.dataset+'_miss'+str(args.mask_ratio)+'_'+args.task+'/best.pth')
             torch.save(best_model, f'./output_BiaTCGNet_{args.dataset}_miss{args.mask_ratio}_{args.task}/best.pth')
-            print(best_model, './output_BiaTCGNet_'+args.dataset+'_miss'+str(args.mask_ratio)+'_'+args.task+'/best.pth')
+            # print(best_model, './output_BiaTCGNet_'+args.dataset+'_miss'+str(args.mask_ratio)+'_'+args.task+'/best.pth')
 
 
 def evaluate(model, val_iter,scaler):
