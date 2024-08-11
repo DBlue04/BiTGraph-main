@@ -213,7 +213,7 @@ def run():
                   skip_channels=16, end_channels=32,
                   seq_length=args.seq_len, in_dim=1, out_len=args.pred_len, out_dim=1,
                   layers=2, propalpha=0.05, tanhalpha=3, layer_norm_affline=True).cuda()
-
+    #best_model, './output_BiaTCGNet_'+args.dataset+'_miss'+str(args.mask_ratio)+'_'+args.task+'/best.pth'
     model.load_state_dict(torch.load('./output_BiaTCGNet_'+args.dataset+'_miss'+str(args.mask_ratio)+'_'+args.task+'/best.pth'))
     loss=test(model)
 

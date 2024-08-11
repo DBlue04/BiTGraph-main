@@ -136,12 +136,12 @@ elif(args.dataset=='ETTh1'):
     args.enc_in = 7
     args.dec_in = 7
     args.c_out = 7
-# elif(args.dataset=='Elec'):
-#     node_number=321
-#     args.num_nodes=321
-#     args.enc_in = 321
-#     args.dec_in = 321
-#     args.c_out = 321
+elif(args.dataset=='Elec'):
+    node_number=321
+    args.num_nodes=321
+    args.enc_in = 321
+    args.dec_in = 321
+    args.c_out = 321
 elif(args.dataset=='BeijingAir'):
     node_number=36
     args.num_nodes=36
@@ -184,7 +184,9 @@ def train(model):
             best_loss=loss
             best_model = copy.deepcopy(model.state_dict())
             os.makedirs('./output_BiaTCGNet_'+args.dataset+'_miss'+str(args.mask_ratio)+'_'+args.task,exist_ok=True)
-            torch.save(best_model, './output_BiaTCGNet_'+args.dataset+'_miss'+str(args.mask_ratio)+'_'+args.task+'/best.pth')
+            # torch.save(best_model, './output_BiaTCGNet_'+args.dataset+'_miss'+str(args.mask_ratio)+'_'+args.task+'/best.pth')
+            torch.save(best_model, f'./output_BiaTCGNet_{args.dataset}_miss{args.mask_ratio}_{args.task}/best.pth')
+            print(best_model, './output_BiaTCGNet_'+args.dataset+'_miss'+str(args.mask_ratio)+'_'+args.task+'/best.pth')
 
 
 def evaluate(model, val_iter,scaler):
