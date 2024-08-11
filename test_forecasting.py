@@ -21,7 +21,7 @@ parser.add_argument('--hid_size', type=int)
 parser.add_argument('--impute_weight', type=float)
 parser.add_argument('--label_weight', type=float)
 parser.add_argument("--adj-threshold", type=float, default=0.1)
-parser.add_argument('--dataset',default='Metr')
+parser.add_argument('--dataset',default='ETTh1')
 parser.add_argument('--val_ratio',default=0.2)
 parser.add_argument('--test_ratio',default=0.2)
 parser.add_argument('--column_wise',default=False)
@@ -83,7 +83,7 @@ parser.add_argument('--default_graph', type=bool, default=True)
 #############GTS##################################
 parser.add_argument('--temperature', default=0.5, type=float, help='temperature value for gumbel-softmax.')
 
-parser.add_argument("--config_filename", type=str, default='./models/GTS/para_Metr.yaml')
+parser.add_argument("--config_filename", type=str, default='./models/GTS/para_ETTh1.yaml')
 #####################################################
 parser.add_argument("--config", type=str, default='imputation/spin.yaml')
 parser.add_argument('--output_attention', type=bool, default=False)
