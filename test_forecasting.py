@@ -90,7 +90,7 @@ parser.add_argument('--output_attention', type=bool, default=False)
 # Splitting/aggregation params
 parser.add_argument('--val-len', type=float, default=0.2)
 parser.add_argument('--test-len', type=float, default=0.2)
-parser.add_argument('--mask_ratio',type=float,default=0.8)
+parser.add_argument('--mask_ratio',type=float,default=0.2)
 # Training params
 parser.add_argument('--lr', type=float, default=0.001)  #0.001
 # parser.add_argument('--epochs', type=int, default=300)
