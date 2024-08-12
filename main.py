@@ -23,7 +23,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--batch_size', type=int, default=64)
 parser.add_argument('--task', default='prediction',type=str)
 parser.add_argument("--adj-threshold", type=float, default=0.1)
-parser.add_argument('--dataset',default='ETTh1')#Elec
+parser.add_argument('--dataset',default='Metr')#Elec
 parser.add_argument('--val_ratio',default=0.2)
 parser.add_argument('--test_ratio',default=0.2)
 parser.add_argument('--column_wise',default=False)
@@ -91,7 +91,7 @@ parser.add_argument('--output_attention', type=bool, default=False)
 # Splitting/aggregation params
 parser.add_argument('--val-len', type=float, default=0.2)
 parser.add_argument('--test-len', type=float, default=0.2)
-parser.add_argument('--mask_ratio',type=float,default=0.6)
+parser.add_argument('--mask_ratio',type=float,default=0.1)
 # Training params
 parser.add_argument('--lr', type=float, default=0.001)  #0.001
 parser.add_argument('--epochs', type=int, default=100) # 20:34 7/8
