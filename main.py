@@ -23,7 +23,7 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--batch_size', type=int, default=64)
 parser.add_argument('--task', default='prediction',type=str)
 parser.add_argument("--adj-threshold", type=float, default=0.1)
-parser.add_argument('--dataset',default='Metr')#Elec
+parser.add_argument('--dataset',default='PEMS')#Elec
 parser.add_argument('--val_ratio',default=0.2)
 parser.add_argument('--test_ratio',default=0.2)
 parser.add_argument('--column_wise',default=False)
